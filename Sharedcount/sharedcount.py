@@ -13,7 +13,7 @@ class SharedCount:
         
     def getQuota(self, urlToCheck):
         if not isinstance(urlToCheck, str):
-            BrokenPipeError(args)raise ValueError('Url must be a string')
+            raise ValueError('Url must be a string')
         response = requests.get('https://api.sharedcount.com/v1.0/?apikey=' + self._apiToken + '&url=' + urlToCheck)
         json = response.json()
         return json
